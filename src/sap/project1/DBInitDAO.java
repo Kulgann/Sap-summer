@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.DatabaseMetaData;
 
 public class DBInitDAO {
- 
+	 
 	private DataSource dataSource;
  
 	public DBInitDAO(DataSource newDataSource) throws SQLException
@@ -124,7 +124,9 @@ public class DBInitDAO {
 					+ "ID VARCHAR(255) PRIMARY KEY,"
 					+ "MOVIE_ID VARCHAR(255) NOT NULL,"
 					+ "HALL_NUM INTEGER NOT NULL,"
-					+ "PR_DATE TIMESTAMP)");
+					+ "PR_DATE TIMESTAMP," 
+					+ "FOREIGN KEY (MOVIE_ID) REFERENCES MOVIES(ID),"
+					+ "FOREIGN KEY (HALL_NUM) REFERENCES HALLS(NUMBER))");
 			pstmt.executeUpdate();
 		} 
 		finally {
@@ -142,7 +144,8 @@ public class DBInitDAO {
 					+ "PROJECTION_ID VARCHAR(255) NOT NULL,"
 					+ "SEAT_ROW INTEGER NOT NULL,"
 					+ "SEAT_COL INTEGER NOT NULL,"
-					+ "RECEIVED INTEGER NOT NULL)");
+					+ "RECEIVED INTEGER NOT NULL,"
+					+ "FOREIGN KEY (PROJECTION_ID) REFERENCES PROJECTIONS(ID))");
 			pstmt.executeUpdate();
 		}
 		finally {
