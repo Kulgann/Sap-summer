@@ -28,7 +28,7 @@ public class HallDAO {
 
         try {
             PreparedStatement pstmt = connection
-                    .prepareStatement("INSERT INTO HALLS (NUMBERS, N_ROWS, N_COLUMNS) VALUES (?, ?, ?)");
+                    .prepareStatement("INSERT INTO HALLS (NUMBER, N_ROWS, N_COLUMNS) VALUES (?, ?, ?)");
             pstmt.setInt(1, hall.getNumber());
             pstmt.setInt(2, hall.getRows());
             pstmt.setInt(3, hall.getColumns());
