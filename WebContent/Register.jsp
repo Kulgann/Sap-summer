@@ -1,9 +1,6 @@
-<%@page import="sap.project1.UserControl"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ page import UserControl %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
 <HTML>
 	<HEAD>
 		<TITLE> Cinema tickets booking system </TITLE>
@@ -84,43 +81,79 @@
 		</div>
 		<div id="movie"><img src="movie.png"alt="" width="450px"height="400px" />
 		</div>
-		<script language="javascript">
-<!--//
-/*This Script allows people to enter by using a form that asks for a
-UserID and Password*/
-function pasuser(form) {
-if (form.id.value=="Admin") { 
-if (form.pass.value=="Admin") {              
-location="admin.html" 
-} else {
-alert("Invalid Password")
-}
-} else {  alert("Invalid UserID")
-}
-}
-//-->
-</script>
-		<div class="container">
-			<section id="content">
-				<form action=LoginServlet method="post">
-					<h1>Login</h1>
-					<div>
-						<form name="login" >
-						<input type="text" name="id" placeholder="Username" required="" id="username" />
-					
-					</div>
-					<div>
-						<input type="password" name="pass" placeholder="Password" required="" id="password" />
-					
-					</div>
-					<div id="button">
-						<input type="submit" value="Log in" onClick="pasuser(this.form)" /></form>
-						
-						<a href="#">Lost your password?</a> </br>
-						<a href="register.html">Register</a>
-					</div>
-				</form>
-			</section>
+		<div id="content1">
+			<img src="content.jpg"alt="" width="800px" height="700px" />
 		</div>
-	</body>
-</html>
+		<table border="1" cellpadding="5" CELLSPACING="1">
+				<FORM NAME="regForm"  ACTION="registration" METHOD="post">
+				<TR>
+					<TD ALIGN="right" ><B> Име</b></TD>
+					<TD ALIGN="left" COLSPAN="3"> <input type="text" name="FirstName" value="" size="45"/> </TD>
+				</tr>
+				<tr>
+					<TD ALIGN="right" ><B> Фамилия</b> </TD>
+					<TD ALIGN="left" COLSPAN="3"> <input type="text" name="LastName" value="" size="45"/> </TD>
+				</tr>
+				<tr>
+					<TD ALIGN="right"><b>E-mail*</b></td>
+					<TD align="left"colspan="3"> <input type="email" required="true" pattern="[^ @]*@[^ @].[^ @]"/></td>
+				</tr>
+				<tr>
+				<tr>
+					<TD ALIGN="right"><b>Парола*</b></td>
+					<TD align="left"colspan="3"> <input type="password" size="20"></td>
+				</tr>
+				<tr>
+					<TD ALIGN="right"><b>Повтори Парола*</b></td>
+					<TD align="left"colspan="3"> <input type="password" size="20"></td>
+				</tr>
+				<tr>
+				
+					<TD ALIGN="right"><b> Град</b></td>
+					<Td align="left" colspan="3"><select name="country">
+						<option value="Value 1"selected="selected">София</option>
+						<option value="Value 2">Пловдив </option>
+						<option value="Value 3">Бургас </option> 
+						<option value="Value 3">Варна </option></td></select>
+				</tr>
+				<tr>
+					<TD ALIGN="right" ><b> Телефон за връзка</b></td>
+					<TD ALIGN="left" COLSPAN="3">( + <input type="text" name="code" value="359"size="4" /> )
+										<input type="text" name="area" value=""size="4" /> - 
+										<input type="text" name="num" value="" size="10"/> </TD>
+										
+				</tr>
+				
+				<tr>
+					<TD ALIGN="right" ><b>Дата на раждане</b></td>
+					<TD	ALIGN="left" COLSPAN="3">Ден<input type="text" name="day" value=""size="2" /> Месец <input type="text" name="month" value="" size="2"/> Година <input type="text" name="zip" value=""size="4" /> </TD>
+				</tr>
+				<tr>
+					<TD ALIGN="right"><b>Пол</b></td>
+					<TD align="left"colspan="3"><select name="gender"><option value="Value 1"selected="selected">Мъж</option>
+					<option value="Value 2">Жена</option></selected></td>
+				</tr>
+				<tr>
+				<td align="right"><b>Любим жанр</b></td>	
+				<td align="left" colspan="1"><input type="checkbox" name="vehicle" value="Bike">Анимация<br>
+					<input type="checkbox" name="vehicle" value="Car">Драма</br>
+					<input type="checkbox" name="vehicle" value="Bike">Фентъзи<br>
+					<input type="checkbox" name="vehicle" value="Bike">Ужаси</br>
+					<input type="checkbox" name="vehicle" value="Bike">Документален</br>
+				</td>
+				<td align="left" colspan="1"><input type="checkbox" name="vehicle" value="Bike">Екшън<br>
+				<input type="checkbox" name="vehicle" value="Bike">Мистерия<br>
+				<input type="checkbox" name="vehicle" value="Bike">Психо<br>
+				<input type="checkbox" name="vehicle" value="Bike">Приключенски</br>
+				<input type="checkbox" name="vehicle" value="Bike">Трилър</br>
+				</td>
+				</tr>
+			
+				
+				
+				<tr>
+					<td ALIGN="center" colspan="4"><input type="submit" value="Изпрати" /> 
+					<input type="reset" name="resetBtn" value="Изчисти" /> </td>
+				</tr>
+			</form>		
+		</table>

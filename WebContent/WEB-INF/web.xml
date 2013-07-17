@@ -27,4 +27,14 @@
     <servlet-name>Dbcontroll</servlet-name>
     <url-pattern>/Dbcontroll</url-pattern>
   </servlet-mapping>
+ <servlet>
+    <description></description>
+    <display-name>RegistrationServlet</display-name>
+    <servlet-name>RegistrationServlet</servlet-name>
+    <servlet-class>sap.project1.RegistrationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegistrationServlet</servlet-name>
+    <url-pattern>/registration</url-pattern>
+  </servlet-mapping>
 </web-app>
