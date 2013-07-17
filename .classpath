@@ -2,6 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="fast-md5"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Uri/Desktop/jstl-1.2.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.6.0_37">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>
