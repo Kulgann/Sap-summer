@@ -1,9 +1,23 @@
 package sap.project1;
 
 import java.util.Date;
+import java.util.List;
 
 public class TicketControl {
 	
+	public static void Purge(List<ReservedTicket> resTickets, Date timeOfPurge)
+	{
+		final long toleranceForPaymentInMs = 600000; // 10 min
+		
+		for(int i = 0; i < resTickets.size(); i++)
+		{
+			if((resTickets.get(i).getTimeOfCreation().getTime() + toleranceForPaymentInMs) < timeOfPurge.getTime() )
+			{
+				resTickets.remove(i);
+				i--; // The indices of the elements after the removed one are reduced by 1
+			}
+		}
+	}
 
 	public class ReservedTicket
 	{
