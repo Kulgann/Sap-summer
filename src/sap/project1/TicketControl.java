@@ -14,7 +14,7 @@ public class TicketControl {
 			if((resTickets.get(i).getTimeOfCreation().getTime() + toleranceForPaymentInMs) < timeOfPurge.getTime() )
 			{
 				resTickets.remove(i);
-				i--; // The indices of the elements after the removed one are reduced by 1
+				i--; // To compensate for the indices of the elements after the removed one being reduced by 1
 			}
 		}
 	}
