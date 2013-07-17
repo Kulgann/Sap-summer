@@ -44,27 +44,14 @@ public class UserControl extends HttpServlet {
     MD5 md5 = new MD5();
 	User user = new User();
 	
-	private String email;
-	private String pass ;
-	private String firstName;
-	private String lastName;
-	private String tel;
-	private String city;
-	private int sex=0;
-    
+
     /**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	public void CreateUser()
+	public void CreateUser(String pass, String email,String firstName, String lastName, String tel, String city, int sex)
 
 	{
-		pass = "";
-		email = "";
-		firstName = "";
-		lastName = "";
-		tel = "";
-		city= "";
-		sex =0;
+		
 		user.setCity(city);
 		user.setEmail(email);
 		user.setFirstName(firstName);

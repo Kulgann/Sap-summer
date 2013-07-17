@@ -33,8 +33,18 @@ public class RegistrationServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	
-	String FristName = request.getParameter(FirstName);
-	
+	String FristName = request.getParameter("FirstName");
+	String LastName = request.getParameter("LastName");
+	String Email = request.getParameter("email");
+	String Password = request.getParameter("password");
+	String City = request.getParameter("country");
+	StringBuilder Tel = null ;
+	Tel.append(request.getParameter("code")).append(request.getParameter("area")).append(request.getParameter("num"));
+	String tel=Tel.toString();
+	String  gender = request.getParameter("gender");
+	int sex= Integer.parseInt(gender);
+	UserControl uc= new UserControl();
+	uc.CreateUser(Password, Email, FristName, LastName, tel, City, sex);
 	}
 
 }
