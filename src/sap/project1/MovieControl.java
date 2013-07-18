@@ -53,16 +53,27 @@ public class MovieControl extends HttpServlet {
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	List<String> titlelist = null;
-	try {
-		List<Projection> projectionlist =pd.viewAllProjections();
+    	List<Projection> projectionlist = null;
+    	try {
+		 projectionlist =pd.viewAllProjections();
 	} catch (SQLException e) {
 		
 		e.printStackTrace();
 	}
-		for(int i=0;i<projectionlist.)
+		
+		for(int i=0;i<projectionlist.size();i++)
+		{
+			try {
+				titlelist.add(new String(md.searchById(projectionlist.get(i).getId()).getTitle())+projectionlist.get(i).getDate());
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
 		
 		
-		request.setAttribute("listData", titlelist);
+		request.setAttribute("titlelist", titlelist);
 	    RequestDispatcher rd = getServletContext().getRequestDispatcher("/Sap-Summer/WebContent/programa.jsp");
 	    rd.forward(request, response);
 	
