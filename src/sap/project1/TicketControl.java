@@ -5,10 +5,10 @@ import java.util.List;
 
 public class TicketControl {
 	
+	final static long toleranceForPaymentInMs = 600000; // 10 min
+	
 	public static void Purge(List<ReservedTicket> resTickets, Date timeOfPurge)
 	{
-		final long toleranceForPaymentInMs = 600000; // 10 min
-		
 		for(int i = 0; i < resTickets.size(); i++)
 		{
 			if((resTickets.get(i).getTimeOfCreation().getTime() + toleranceForPaymentInMs) < timeOfPurge.getTime() )
@@ -19,7 +19,7 @@ public class TicketControl {
 		}
 	}
 
-	public class ReservedTicket
+	public static class ReservedTicket
 	{
 		String user_id;
 		String projection_id;

@@ -47,4 +47,14 @@
     <servlet-name>MovieControl</servlet-name>
     <url-pattern>/MovieControl</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TicketReservationServlet</display-name>
+    <servlet-name>TicketReservationServlet</servlet-name>
+    <servlet-class>sap.project1.TicketReservationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TicketReservationServlet</servlet-name>
+    <url-pattern>/TicketReservationServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
